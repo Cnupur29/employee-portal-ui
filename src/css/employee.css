@@ -1,0 +1,24 @@
+html{
+    height: 100%;
+}
+
+body{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /*text-rendering: optimizeLegibility; */
+    position: relative;
+    min-height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    font-size: 1.5em;
+    background: linear-gradient(150deg,#b1cad1 15%, #fffbd9 70%, #ebcece 99%);
+}
+
+h1{
+    font-size: 2.0em;
+}
+
+.table-bordered , .table-bordered td , .table-bordered th {
+    border: 1px solid #2f465d;
+    padding-left: 10px;
+}

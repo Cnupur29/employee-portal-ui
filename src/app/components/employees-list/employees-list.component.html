@@ -1,0 +1,23 @@
+<div class="container">
+    <table class="table table-bordered table-inverse">
+        <tr>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Manager</th>
+            <th>Department</th>
+           <th class="text-right">Email</th>
+        </tr>
+        <tr *ngFor="let emp of employees">
+           <td>
+               <a [routerLink]="['/employee/view' , emp.id]">{{emp.firstName}} {{emp.lastName}}</a> <!--create a link on the name and the when click on link goes to admin/view page with its specific id's information-->
+           </td>
+           <td>{{emp.designation}}</td>
+           <td>{{emp.manager}}</td>
+           <td>{{emp.department}}</td>
+           <td class="text-right">{{emp.email}}</td>
+        </tr>
+    </table>
+    <div class="row">
+        <a class="btn btn-primary" routerLink = "/addEmployee">Add new Employee</a> <!-- create a link which when click call the component with this route-->
+    </div>
+   </div>
