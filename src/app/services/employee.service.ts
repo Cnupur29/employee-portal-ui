@@ -15,11 +15,16 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
   getEmployees() {
-    return this.http.get('/server/api/v1/employees');
+    let token = localStorage.getItem('access_token');
+    return this.http.get('/server/api/v1/employees' , {
+      headers: new HttpHeaders().set('Authorization' , 'Bearer ' + token)});
+  
   }
 
   getEmployeeById(id: number){
-    return this.http.get('/server/api/v1/employees/' + id);
+    let token = localStorage.getItem('access_token');
+    return this.http.get('/server/api/v1/employees/' + id , {
+      headers: new HttpHeaders().set('Authorization' , 'Bearer ' + token)});
   }
 
   addAnEmployee(employee: any){

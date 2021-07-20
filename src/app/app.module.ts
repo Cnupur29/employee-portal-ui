@@ -9,13 +9,17 @@ import { AddEmployeeComponent } from './components/add-employee/add-employee.com
 import { EmployeeService } from './services/employee.service';
 import { ViewEmployeeComponent } from './components/view-employee/view-employee.component';
 import { EmployeesListComponent } from './components/employees-list/employees-list.component';
+import { CallbackComponent } from './components/callback/callback.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddEmployeeComponent,
     ViewEmployeeComponent,
-    EmployeesListComponent
+    EmployeesListComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,7 @@ import { EmployeesListComponent } from './components/employees-list/employees-li
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService , AuthService , AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

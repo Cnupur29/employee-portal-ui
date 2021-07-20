@@ -3,19 +3,26 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 import { ViewEmployeeComponent } from './components/view-employee/view-employee.component';
 import { EmployeesListComponent } from './components/employees-list/employees-list.component';
-
+import { CallbackComponent } from './components/callback/callback.component';
+import { AuthGuard } from './services/auth.guard';
 const routes: Routes = [
   {
-    path: 'addEmployee',
+    path: '',
     component: AddEmployeeComponent
   },
   {
     path: 'employee/view/:id',
-    component: ViewEmployeeComponent
+    component: ViewEmployeeComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: 'listEmployees',
-    component: EmployeesListComponent
+    path: 'listEmployees', // add back the path "listEmployees" if doesnot work
+    component: EmployeesListComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'callback',
+    component: CallbackComponent
   }
 ];
 
